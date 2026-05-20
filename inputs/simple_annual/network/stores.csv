@@ -1,0 +1,2 @@
+name,bus,carrier,e_nom,e_nom_extendable,e_nom_max,capital_cost,e_min_pu,e_max_pu,standing_loss
+battery_DK,DK,battery,0.0,True,2000.0,200000.0,0.0,1.0,0.001

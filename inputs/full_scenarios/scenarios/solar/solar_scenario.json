@@ -1,0 +1,1478 @@
+{
+  "solver": "gurobi",
+  "run": {
+    "mode": "expand",
+    "pre_solve": "island"
+  },
+  "network": {
+    "stop_price": 3000.0
+  },
+  "generators": {
+    "nuclear_existing_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "nuclear_existing_SE3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "nuclear_existing_SE3_p_min_pu"
+      }
+    },
+    "biomass_SE1": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "biomass_SE1_p_max_pu"
+      }
+    },
+    "biomass_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "biomass_SE2_p_max_pu"
+      }
+    },
+    "biomass_heating_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "biomass_heating_SE3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "biomass_heating_SE3_p_min_pu"
+      }
+    },
+    "biomass_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "biomass_SE4_p_max_pu"
+      }
+    },
+    "inflow_hydro_SE1": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "inflow_hydro_SE1_p_max_pu"
+      }
+    },
+    "inflow_hydro_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "inflow_hydro_SE2_p_max_pu"
+      }
+    },
+    "inflow_hydro_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "inflow_hydro_SE3_p_max_pu"
+      }
+    },
+    "hydro_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "hydro_SE4_p_max_pu"
+      }
+    },
+    "wind_offshore_existing_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_offshore_existing_SE4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_offshore_existing_SE4_p_min_pu"
+      }
+    },
+    "wind_offshore_new_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_offshore_new_SE2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_offshore_new_SE2_p_min_pu"
+      }
+    },
+    "wind_offshore_new_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_offshore_new_SE3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_offshore_new_SE3_p_min_pu"
+      }
+    },
+    "wind_offshore_new_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_offshore_new_SE4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_offshore_new_SE4_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_SE1": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "wind_onshore_existing_SE1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "wind_onshore_existing_SE1_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_onshore_existing_SE2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_onshore_existing_SE2_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_onshore_existing_SE3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_onshore_existing_SE3_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_onshore_existing_SE4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_onshore_existing_SE4_p_min_pu"
+      }
+    },
+    "wind_onshore_new_SE1": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "wind_onshore_new_SE1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "wind_onshore_new_SE1_p_min_pu"
+      }
+    },
+    "wind_onshore_new_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_onshore_new_SE2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "wind_onshore_new_SE2_p_min_pu"
+      }
+    },
+    "wind_onshore_new_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_onshore_new_SE3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "wind_onshore_new_SE3_p_min_pu"
+      }
+    },
+    "wind_onshore_new_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_onshore_new_SE4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "wind_onshore_new_SE4_p_min_pu"
+      }
+    },
+    "solar_new_SE1": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "solar_new_SE1_p_max_pu"
+      }
+    },
+    "solar_new_SE2": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "solar_new_SE2_p_max_pu"
+      }
+    },
+    "solar_new_SE3": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "solar_new_SE3_p_max_pu"
+      }
+    },
+    "solar_new_SE4": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "solar_new_SE4_p_max_pu"
+      }
+    },
+    "inflow_hydro_NO125": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "inflow_hydro_NO125_p_max_pu"
+      }
+    },
+    "inflow_hydro_NO3": {
+      "p_max_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "inflow_hydro_NO3_p_max_pu"
+      }
+    },
+    "inflow_hydro_NO4": {
+      "p_max_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "inflow_hydro_NO4_p_max_pu"
+      }
+    },
+    "wind_offshore_new_NO125": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_offshore_new_NO125_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_offshore_new_NO125_p_min_pu"
+      }
+    },
+    "wind_offshore_new_NO3": {
+      "p_max_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "wind_offshore_new_NO3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "wind_offshore_new_NO3_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_NO125": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_onshore_existing_NO125_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_onshore_existing_NO125_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_NO4": {
+      "p_max_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "wind_onshore_existing_NO4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "wind_onshore_existing_NO4_p_min_pu"
+      }
+    },
+    "wind_onshore_new_NO125": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_onshore_new_NO125_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "wind_onshore_new_NO125_p_min_pu"
+      }
+    },
+    "wind_onshore_new_NO3": {
+      "p_max_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "wind_onshore_new_NO3_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "wind_onshore_new_NO3_p_min_pu"
+      }
+    },
+    "wind_onshore_new_NO4": {
+      "p_max_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "wind_onshore_new_NO4_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "wind_onshore_new_NO4_p_min_pu"
+      }
+    },
+    "solar_existing_NO125": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "solar_existing_NO125_p_max_pu"
+      }
+    },
+    "solar_existing_NO3": {
+      "p_max_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "solar_existing_NO3_p_max_pu"
+      }
+    },
+    "nuclear_existing_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "nuclear_existing_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "nuclear_existing_FI_p_min_pu"
+      }
+    },
+    "nuclear_new_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "nuclear_new_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "nuclear_new_FI_p_min_pu"
+      }
+    },
+    "biomass_heating_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "biomass_heating_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "biomass_heating_FI_p_min_pu"
+      }
+    },
+    "coal_hard_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "coal_hard_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "coal_hard_FI_p_min_pu"
+      }
+    },
+    "gas_CC_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "gas_CC_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "gas_CC_FI_p_min_pu"
+      }
+    },
+    "inflow_hydro_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "inflow_hydro_FI_p_max_pu"
+      }
+    },
+    "wind_offshore_new_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_offshore_new_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_offshore_new_FI_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_onshore_existing_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_onshore_existing_FI_p_min_pu"
+      }
+    },
+    "wind_onshore_new_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_onshore_new_FI_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "wind_onshore_new_FI_p_min_pu"
+      }
+    },
+    "solar_new_FI": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "solar_new_FI_p_max_pu"
+      }
+    },
+    "biomass_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "biomass_DK1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "biomass_DK1_p_min_pu"
+      }
+    },
+    "biomass_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "biomass_DK2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "biomass_DK2_p_min_pu"
+      }
+    },
+    "wind_offshore_new_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_offshore_new_DK1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_offshore_new_DK1_p_min_pu"
+      }
+    },
+    "wind_offshore_farshore_new_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_offshore_farshore_new_DK1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_offshore_farshore_new_DK1_p_min_pu"
+      }
+    },
+    "wind_offshore_new_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_offshore_new_DK2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_offshore_new_DK2_p_min_pu"
+      }
+    },
+    "wind_offshore_farshore_new_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_offshore_farshore_new_DK2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_offshore_farshore_new_DK2_p_min_pu"
+      }
+    },
+    "wind_onshore_new_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_onshore_new_DK1_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "wind_onshore_new_DK1_p_min_pu"
+      }
+    },
+    "wind_onshore_new_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_onshore_new_DK2_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "wind_onshore_new_DK2_p_min_pu"
+      }
+    },
+    "solar_existing_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "solar_existing_DK1_p_max_pu"
+      }
+    },
+    "solar_existing_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "solar_existing_DK2_p_max_pu"
+      }
+    },
+    "solar_new_DK1": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "solar_new_DK1_p_max_pu"
+      }
+    },
+    "solar_new_DK2": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "solar_new_DK2_p_max_pu"
+      }
+    },
+    "must_run_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "must_run_DE_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DE.csv",
+        "column": "must_run_DE_p_min_pu"
+      }
+    },
+    "wind_offshore_existing_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_offshore_existing_DE_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_offshore_existing_DE_p_min_pu"
+      }
+    },
+    "wind_offshore_new_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_offshore_new_DE_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_offshore_new_DE_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_onshore_existing_DE_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_onshore_existing_DE_p_min_pu"
+      }
+    },
+    "wind_onshore_new_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_onshore_new_DE_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/DE.csv",
+        "column": "wind_onshore_new_DE_p_min_pu"
+      }
+    },
+    "solar_new_DE": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "solar_new_DE_p_max_pu"
+      }
+    },
+    "nuclear_new_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "nuclear_new_PL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/PL.csv",
+        "column": "nuclear_new_PL_p_min_pu"
+      }
+    },
+    "must_run_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "must_run_PL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/PL.csv",
+        "column": "must_run_PL_p_min_pu"
+      }
+    },
+    "wind_offshore_new_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_offshore_new_PL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_offshore_new_PL_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_onshore_existing_PL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_onshore_existing_PL_p_min_pu"
+      }
+    },
+    "wind_onshore_new_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_onshore_new_PL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/PL.csv",
+        "column": "wind_onshore_new_PL_p_min_pu"
+      }
+    },
+    "solar_new_PL": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "solar_new_PL_p_max_pu"
+      }
+    },
+    "wind_offshore_new_BT": {
+      "p_max_pu": {
+        "file": "profiles/BT.csv",
+        "column": "wind_offshore_new_BT_p_max_pu"
+      }
+    },
+    "wind_onshore_new_BT": {
+      "p_max_pu": {
+        "file": "profiles/BT.csv",
+        "column": "wind_onshore_new_BT_p_max_pu"
+      }
+    },
+    "solar_new_BT": {
+      "p_max_pu": {
+        "file": "profiles/BT.csv",
+        "column": "solar_new_BT_p_max_pu"
+      }
+    },
+    "nuclear_existing_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "nuclear_existing_NL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NL.csv",
+        "column": "nuclear_existing_NL_p_min_pu"
+      }
+    },
+    "wind_offshore_existing_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_offshore_existing_NL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_offshore_existing_NL_p_min_pu"
+      }
+    },
+    "wind_offshore_new_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_offshore_new_NL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_offshore_new_NL_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_onshore_existing_NL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_onshore_existing_NL_p_min_pu"
+      }
+    },
+    "wind_onshore_new_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_onshore_new_NL_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/NL.csv",
+        "column": "wind_onshore_new_NL_p_min_pu"
+      }
+    },
+    "solar_new_NL": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "solar_new_NL_p_max_pu"
+      }
+    },
+    "nuclear_existing_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "nuclear_existing_GB_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "nuclear_existing_GB_p_min_pu"
+      }
+    },
+    "wind_offshore_existing_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_offshore_existing_GB_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_offshore_existing_GB_p_min_pu"
+      }
+    },
+    "wind_offshore_new_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_offshore_new_GB_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_offshore_new_GB_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_onshore_existing_GB_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_onshore_existing_GB_p_min_pu"
+      }
+    },
+    "wind_onshore_new_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_onshore_new_GB_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "wind_onshore_new_GB_p_min_pu"
+      }
+    },
+    "solar_new_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "solar_new_GB_p_max_pu"
+      }
+    },
+    "hydro_GB": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "hydro_GB_p_max_pu"
+      }
+    },
+    "nuclear_existing_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "nuclear_existing_FR_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FR.csv",
+        "column": "nuclear_existing_FR_p_min_pu"
+      }
+    },
+    "wind_offshore_existing_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_offshore_existing_FR_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_offshore_existing_FR_p_min_pu"
+      }
+    },
+    "wind_offshore_new_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_offshore_new_FR_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_offshore_new_FR_p_min_pu"
+      }
+    },
+    "wind_onshore_existing_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_onshore_existing_FR_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_onshore_existing_FR_p_min_pu"
+      }
+    },
+    "wind_onshore_new_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_onshore_new_FR_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/FR.csv",
+        "column": "wind_onshore_new_FR_p_min_pu"
+      }
+    },
+    "solar_new_FR": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "solar_new_FR_p_max_pu"
+      }
+    },
+    "nuclear_existing_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "nuclear_existing_ES_p_max_pu"
+      },
+      "p_min_pu": {
+        "file": "profiles/ES.csv",
+        "column": "nuclear_existing_ES_p_min_pu"
+      }
+    },
+    "inflow_hydro_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "inflow_hydro_ES_p_max_pu"
+      }
+    },
+    "wind_offshore_existing_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "wind_offshore_existing_ES_p_max_pu"
+      }
+    },
+    "wind_onshore_existing_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "wind_onshore_existing_ES_p_max_pu"
+      }
+    },
+    "wind_onshore_new_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "wind_onshore_new_ES_p_max_pu"
+      }
+    },
+    "solar_new_ES": {
+      "p_max_pu": {
+        "file": "profiles/ES.csv",
+        "column": "solar_new_ES_p_max_pu"
+      }
+    },
+    "baseload_SE1_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "baseload_SE1_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_SE2_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "baseload_SE2_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_SE3_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "baseload_SE3_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_SE4_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "baseload_SE4_curtail_gen_p_max_pu"
+      }
+    },
+    "industry_baseload_SE1_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE1.csv",
+        "column": "industry_baseload_SE1_curtail_gen_p_max_pu"
+      }
+    },
+    "industry_baseload_SE2_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE2.csv",
+        "column": "industry_baseload_SE2_curtail_gen_p_max_pu"
+      }
+    },
+    "industry_baseload_SE3_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE3.csv",
+        "column": "industry_baseload_SE3_curtail_gen_p_max_pu"
+      }
+    },
+    "industry_baseload_SE4_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/SE4.csv",
+        "column": "industry_baseload_SE4_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_NO125_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "baseload_NO125_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_NO3_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "baseload_NO3_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_NO4_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "baseload_NO4_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_FI_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "baseload_FI_curtail_gen_p_max_pu"
+      }
+    },
+    "boiler_stepload_FI_flex_gen": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "boiler_stepload_FI_flex_gen_p_max_pu"
+      }
+    },
+    "industry_baseload_FI_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/FI.csv",
+        "column": "industry_baseload_FI_curtail_gen_p_max_pu"
+      }
+    },
+    "residential_commercial_baseload_DK1_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "residential_commercial_baseload_DK1_curtail_gen_p_max_pu"
+      }
+    },
+    "residential_commercial_baseload_DK2_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "residential_commercial_baseload_DK2_curtail_gen_p_max_pu"
+      }
+    },
+    "heating_sanitary_baseload_DK1_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "heating_sanitary_baseload_DK1_curtail_gen_p_max_pu"
+      }
+    },
+    "heating_space_baseload_DK1_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK1.csv",
+        "column": "heating_space_baseload_DK1_curtail_gen_p_max_pu"
+      }
+    },
+    "heating_sanitary_baseload_DK2_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "heating_sanitary_baseload_DK2_curtail_gen_p_max_pu"
+      }
+    },
+    "heating_space_baseload_DK2_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DK2.csv",
+        "column": "heating_space_baseload_DK2_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_DE_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/DE.csv",
+        "column": "baseload_DE_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_PL_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/PL.csv",
+        "column": "baseload_PL_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_BT_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/BT.csv",
+        "column": "baseload_BT_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_NL_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/NL.csv",
+        "column": "baseload_NL_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_GB_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/GB.csv",
+        "column": "baseload_GB_curtail_gen_p_max_pu"
+      }
+    },
+    "baseload_FR_curtail_gen": {
+      "p_max_pu": {
+        "file": "profiles/FR.csv",
+        "column": "baseload_FR_curtail_gen_p_max_pu"
+      }
+    },
+    "burning_NO125": {
+      "p_min_pu": {
+        "file": "profiles/NO125.csv",
+        "column": "burning_NO125_p_min_pu"
+      }
+    },
+    "burning_NO3": {
+      "p_min_pu": {
+        "file": "profiles/NO3.csv",
+        "column": "burning_NO3_p_min_pu"
+      }
+    },
+    "burning_NO4": {
+      "p_min_pu": {
+        "file": "profiles/NO4.csv",
+        "column": "burning_NO4_p_min_pu"
+      }
+    },
+    "biomass_industry_FI": {
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "biomass_industry_FI_p_min_pu"
+      }
+    },
+    "gas_mustrun_FI": {
+      "p_min_pu": {
+        "file": "profiles/FI.csv",
+        "column": "gas_mustrun_FI_p_min_pu"
+      }
+    },
+    "biomass_BT": {
+      "p_min_pu": {
+        "file": "profiles/BT.csv",
+        "column": "biomass_BT_p_min_pu"
+      }
+    },
+    "biomass_GB": {
+      "p_min_pu": {
+        "file": "profiles/GB.csv",
+        "column": "biomass_GB_p_min_pu"
+      }
+    }
+  },
+  "loads": {
+    "baseload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "baseload_SE1"
+      }
+    },
+    "baseload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "baseload_SE2"
+      }
+    },
+    "baseload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "baseload_SE3"
+      }
+    },
+    "baseload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "baseload_SE4"
+      }
+    },
+    "EV_baseload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "EV_baseload_SE1"
+      }
+    },
+    "EV_baseload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "EV_baseload_SE2"
+      }
+    },
+    "EV_baseload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "EV_baseload_SE3"
+      }
+    },
+    "EV_baseload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "EV_baseload_SE4"
+      }
+    },
+    "EV_flexload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "EV_flexload_SE1"
+      }
+    },
+    "EV_flexload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "EV_flexload_SE2"
+      }
+    },
+    "EV_flexload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "EV_flexload_SE3"
+      }
+    },
+    "EV_flexload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "EV_flexload_SE4"
+      }
+    },
+    "heating_sanitary_baseload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "heating_sanitary_baseload_SE1"
+      }
+    },
+    "heating_sanitary_baseload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "heating_sanitary_baseload_SE2"
+      }
+    },
+    "heating_sanitary_baseload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "heating_sanitary_baseload_SE3"
+      }
+    },
+    "heating_sanitary_baseload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "heating_sanitary_baseload_SE4"
+      }
+    },
+    "heating_space_baseload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "heating_space_baseload_SE1"
+      }
+    },
+    "heating_space_baseload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "heating_space_baseload_SE2"
+      }
+    },
+    "heating_space_baseload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "heating_space_baseload_SE3"
+      }
+    },
+    "heating_space_baseload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "heating_space_baseload_SE4"
+      }
+    },
+    "industry_baseload_SE1": {
+      "p_set": {
+        "file": "demand/SE1.csv",
+        "column": "industry_baseload_SE1"
+      }
+    },
+    "industry_baseload_SE2": {
+      "p_set": {
+        "file": "demand/SE2.csv",
+        "column": "industry_baseload_SE2"
+      }
+    },
+    "industry_baseload_SE3": {
+      "p_set": {
+        "file": "demand/SE3.csv",
+        "column": "industry_baseload_SE3"
+      }
+    },
+    "industry_baseload_SE4": {
+      "p_set": {
+        "file": "demand/SE4.csv",
+        "column": "industry_baseload_SE4"
+      }
+    },
+    "baseload_NO125": {
+      "p_set": {
+        "file": "demand/NO125.csv",
+        "column": "baseload_NO125"
+      }
+    },
+    "baseload_NO3": {
+      "p_set": {
+        "file": "demand/NO3.csv",
+        "column": "baseload_NO3"
+      }
+    },
+    "baseload_NO4": {
+      "p_set": {
+        "file": "demand/NO4.csv",
+        "column": "baseload_NO4"
+      }
+    },
+    "baseload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "baseload_FI"
+      }
+    },
+    "heating_sanitary_baseload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "heating_sanitary_baseload_FI"
+      }
+    },
+    "heating_space_baseload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "heating_space_baseload_FI"
+      }
+    },
+    "EV_baseload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "EV_baseload_FI"
+      }
+    },
+    "EV_flexload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "EV_flexload_FI"
+      }
+    },
+    "industry_baseload_FI": {
+      "p_set": {
+        "file": "demand/FI.csv",
+        "column": "industry_baseload_FI"
+      }
+    },
+    "residential_commercial_baseload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "residential_commercial_baseload_DK1"
+      }
+    },
+    "residential_commercial_baseload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "residential_commercial_baseload_DK2"
+      }
+    },
+    "residential_commercial_flexload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "residential_commercial_flexload_DK1"
+      }
+    },
+    "residential_commercial_flexload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "residential_commercial_flexload_DK2"
+      }
+    },
+    "residential_commercial_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "residential_commercial_DK1"
+      }
+    },
+    "residential_commercial_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "residential_commercial_DK2"
+      }
+    },
+    "EV_baseload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "EV_baseload_DK1"
+      }
+    },
+    "EV_baseload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "EV_baseload_DK2"
+      }
+    },
+    "EV_flexload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "EV_flexload_DK1"
+      }
+    },
+    "EV_flexload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "EV_flexload_DK2"
+      }
+    },
+    "heating_sanitary_baseload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "heating_sanitary_baseload_DK1"
+      }
+    },
+    "heating_sanitary_flexload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "heating_sanitary_flexload_DK1"
+      }
+    },
+    "heating_space_baseload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "heating_space_baseload_DK1"
+      }
+    },
+    "heating_space_flexload_DK1": {
+      "p_set": {
+        "file": "demand/DK1.csv",
+        "column": "heating_space_flexload_DK1"
+      }
+    },
+    "heating_sanitary_baseload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "heating_sanitary_baseload_DK2"
+      }
+    },
+    "heating_sanitary_flexload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "heating_sanitary_flexload_DK2"
+      }
+    },
+    "heating_space_baseload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "heating_space_baseload_DK2"
+      }
+    },
+    "heating_space_flexload_DK2": {
+      "p_set": {
+        "file": "demand/DK2.csv",
+        "column": "heating_space_flexload_DK2"
+      }
+    },
+    "baseload_DE": {
+      "p_set": {
+        "file": "demand/DE.csv",
+        "column": "baseload_DE"
+      }
+    },
+    "heating_baseload_DE": {
+      "p_set": {
+        "file": "demand/DE.csv",
+        "column": "heating_baseload_DE"
+      }
+    },
+    "EV_baseload_DE": {
+      "p_set": {
+        "file": "demand/DE.csv",
+        "column": "EV_baseload_DE"
+      }
+    },
+    "EV_flexload_DE": {
+      "p_set": {
+        "file": "demand/DE.csv",
+        "column": "EV_flexload_DE"
+      }
+    },
+    "baseload_PL": {
+      "p_set": {
+        "file": "demand/PL.csv",
+        "column": "baseload_PL"
+      }
+    },
+    "baseload_BT": {
+      "p_set": {
+        "file": "demand/BT.csv",
+        "column": "baseload_BT"
+      }
+    },
+    "baseload_NL": {
+      "p_set": {
+        "file": "demand/NL.csv",
+        "column": "baseload_NL"
+      }
+    },
+    "EV_baseload_NL": {
+      "p_set": {
+        "file": "demand/NL.csv",
+        "column": "EV_baseload_NL"
+      }
+    },
+    "EV_flexload_NL": {
+      "p_set": {
+        "file": "demand/NL.csv",
+        "column": "EV_flexload_NL"
+      }
+    },
+    "baseload_GB": {
+      "p_set": {
+        "file": "demand/GB.csv",
+        "column": "baseload_GB"
+      }
+    },
+    "EV_baseload_GB": {
+      "p_set": {
+        "file": "demand/GB.csv",
+        "column": "EV_baseload_GB"
+      }
+    },
+    "EV_flexload_GB": {
+      "p_set": {
+        "file": "demand/GB.csv",
+        "column": "EV_flexload_GB"
+      }
+    },
+    "baseload_FR": {
+      "p_set": {
+        "file": "demand/FR.csv",
+        "column": "baseload_FR"
+      }
+    },
+    "EV_baseload_FR": {
+      "p_set": {
+        "file": "demand/FR.csv",
+        "column": "EV_baseload_FR"
+      }
+    },
+    "EV_flexload_FR": {
+      "p_set": {
+        "file": "demand/FR.csv",
+        "column": "EV_flexload_FR"
+      }
+    },
+    "baseload_ES": {
+      "p_set": {
+        "file": "demand/ES.csv",
+        "column": "baseload_ES"
+      }
+    },
+    "heating_baseload_ES": {
+      "p_set": {
+        "file": "demand/ES.csv",
+        "column": "heating_baseload_ES"
+      }
+    },
+    "EV_baseload_ES": {
+      "p_set": {
+        "file": "demand/ES.csv",
+        "column": "EV_baseload_ES"
+      }
+    },
+    "EV_flexload_ES": {
+      "p_set": {
+        "file": "demand/ES.csv",
+        "column": "EV_flexload_ES"
+      }
+    }
+  }
+}
