@@ -1,6 +1,6 @@
 """Run all full_scenarios against DNA-PyPSA.
 
-Each scenario is run with dna-pypsa expand using its own network folder and
+Each scenario is run with dna-pypsa using its own network folder and
 scenario.json. Results are written to outputs/full_scenarios/<scenario_name>/.
 
 Usage
@@ -16,6 +16,14 @@ Dry run (builds networks, exports CSVs, no solve)::
 Run specific scenarios::
 
     python scripts/run_full_scenarios.py --scenario nuclear --scenario solar
+
+Override the run mode (default: iterate)::
+
+    python scripts/run_full_scenarios.py --mode expand
+
+Overwrite existing output folders::
+
+    python scripts/run_full_scenarios.py --force
 """
 
 from __future__ import annotations
@@ -43,8 +51,8 @@ SCENARIO_NAMES = [
 ]
 
 
-def run_scenario(name: str, dry_run: bool) -> bool:
-    """Run a single scenario with dna-pypsa expand.
+def run_scenario(name: str, dry_run: bool, mode: str, force: bool) -> bool:
+    """Run a single scenario with dna-pypsa.
 
     Parameters
     ----------
@@ -52,6 +60,10 @@ def run_scenario(name: str, dry_run: bool) -> bool:
         Scenario name.
     dry_run : bool
         Pass ``--dry-run`` to dna-pypsa.
+    mode : str
+        Run mode passed to dna-pypsa (``"iterate"`` or ``"expand"``).
+    force : bool
+        Allow overwriting an existing output folder.
 
     Returns
     -------
@@ -60,7 +72,7 @@ def run_scenario(name: str, dry_run: bool) -> bool:
     """
     network = INPUTS / "networks" / name
     config = INPUTS / "scenarios" / name / f"{name}_scenario.json"
-    output = OUTPUTS / name
+    output = OUTPUTS / mode / name
 
     if not network.exists():
         logger.error("Network folder not found: %s", network)
@@ -68,12 +80,17 @@ def run_scenario(name: str, dry_run: bool) -> bool:
     if not config.exists():
         logger.error("Scenario JSON not found: %s", config)
         return False
+    if output.exists() and not force:
+        logger.error(
+            "Output folder already exists: %s  (use --force to overwrite)", output
+        )
+        return False
 
     output.mkdir(parents=True, exist_ok=True)
 
     cmd = [
         "dna-pypsa",
-        "expand",
+        mode,
         "-n",
         str(network),
         "-c",
@@ -115,13 +132,26 @@ def main() -> None:
         action="store_true",
         help="Build networks and export CSVs without solving.",
     )
+    parser.add_argument(
+        "--mode",
+        default="iterate",
+        choices=["iterate", "expand"],
+        help="Run mode passed to dna-pypsa. Default: iterate.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Allow overwriting existing output folders.",
+    )
     args = parser.parse_args()
 
     scenarios = args.scenarios or SCENARIO_NAMES
 
     failed = []
     for name in scenarios:
-        if not run_scenario(name, dry_run=args.dry_run):
+        if not run_scenario(
+            name, dry_run=args.dry_run, mode=args.mode, force=args.force
+        ):
             failed.append(name)
 
     if failed:

@@ -47,7 +47,7 @@ Example config:
 {
   "solver": "highs",
   "run": {
-    "mode": "expand",
+    "mode": "iterate",
     "zones": ["DK", "DE"]
   },
   "network": {
@@ -275,22 +275,12 @@ python scripts/run_full_scenarios.py --dry-run
 
 # Specific scenarios
 python scripts/run_full_scenarios.py --scenario nuclear --scenario nuclear_balanced
+
+# Override the run mode (default: iterate)
+python scripts/run_full_scenarios.py --mode expand
+
+# Overwrite existing output folders
+python scripts/run_full_scenarios.py --force
 ```
 
-Results are written to `outputs/full_scenarios/<scenario_name>/`.
-
-### Migrating new scenarios from QC-PyPSA
-
-The full_scenarios inputs were generated from QC-PyPSA `pypsa_network_before` exports using the migration script in the QC-PyPSA repository:
-
-```bash
-python scripts/migrate_from_qcpypsa.py \
-    --source /path/to/qcpypsa/full_scenarios \
-    --output inputs/full_scenarios
-
-# Single scenario
-python scripts/migrate_from_qcpypsa.py \
-    --source /path/to/qcpypsa/full_scenarios \
-    --output inputs/full_scenarios \
-    --scenario new_scenario_name
-```
+Results are written to `outputs/full_scenarios/<mode>/<scenario_name>/`, e.g. `outputs/full_scenarios/iterate/nuclear/`. If an output folder already exists the script will exit with an error unless `--force` is passed.
