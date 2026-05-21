@@ -44,6 +44,8 @@ Thumbs.db
 
 # Logs
 *.log
+**/gurobi_log.txt
+**/gurobi_investment_log.txt
 
 # Test run inputs
 inputs/*test*
