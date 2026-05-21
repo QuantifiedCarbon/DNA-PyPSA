@@ -1,7 +1,7 @@
 {
   "solver": "gurobi",
   "run": {
-    "mode": "expand",
+    "mode": "iterate",
     "pre_solve": "island"
   },
   "network": {
