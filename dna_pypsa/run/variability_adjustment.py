@@ -510,13 +510,29 @@ def apply_variable_commitment(
             msg,
         )
 
-    slack_cols = [c for c in network.generators_t.p.columns if "slack" in c]
-    if slack_cols and (network.generators_t.p[slack_cols] > 1e-2).any().any():
-        logger.warning(
-            "Slack generators are active — skipping variability update to avoid"
-            " locking in profiles from an infeasible solve."
-        )
-        return {}
+    # Build a per-bus mask of hours where slack exceeds the structural threshold.
+    # These hours have unreliable prices (slack price = stop_price) and are
+    # neutralised below by replacing bus_prices with variable_cost, so they
+    # contribute no signal to the variability update.  This replaces the former
+    # global early-return, which blocked all variability updates whenever any
+    # bus had slack — including noise-level slack in unrelated zones.
+    slack_threshold = constants.VARIABILITY_SLACK_MASK_THRESHOLD_MW
+    slack_hours_by_bus: dict[str, pd.Series] = {}
+    for col in network.generators_t.p.columns:
+        if "slack" not in col:
+            continue
+        bus_name = col.removeprefix("slack_gen_")
+        slack_ts = network.generators_t.p[col]
+        mask = slack_ts > slack_threshold
+        if mask.any():
+            slack_hours_by_bus[bus_name] = mask
+            logger.warning(
+                "Bus %s: %d hours with slack > %.1f MW — those hours will be"
+                " neutralised in the variability update rather than skipped.",
+                bus_name,
+                int(mask.sum()),
+                slack_threshold,
+            )
 
     # Default filter: apply to StepResources (generators with quadratic costs)
     if generator_filter is None:
@@ -588,6 +604,14 @@ def apply_variable_commitment(
         else:
             # No quadratic term - use base marginal cost
             variable_cost = pd.Series(marginal_cost_base, index=generation.index)
+
+        # Neutralise hours where this bus has structural slack: replace the bus
+        # price with the generator's variable cost so those hours neither push
+        # p_max_pu up nor down.
+        if bus in slack_hours_by_bus:
+            mask = slack_hours_by_bus[bus]
+            bus_prices = bus_prices.copy()
+            bus_prices[mask] = variable_cost[mask]
 
         gen_adjustments = {}
 
