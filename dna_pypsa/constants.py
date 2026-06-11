@@ -12,6 +12,13 @@ DIVERGE_THRESHOLD = 1e20
 #: Dispatch output below this (MW) is treated as solver noise.
 DISPATCH_NOISE_THRESHOLD_MW = 1e-2
 
+#: Slack generator output above this (MW) in a given hour is treated as
+#: genuine structural infeasibility.  Hours exceeding this threshold have their
+#: bus price replaced with the generator's variable cost before the variability
+#: update, so they contribute a neutral signal rather than a corrupted one.
+#: Set well above solver noise (1e-2 MW) but below any real infeasibility event.
+VARIABILITY_SLACK_MASK_THRESHOLD_MW = 1.0
+
 #: Default market floor price (EUR/MWh).
 DEFAULT_START_PRICE = -500
 
