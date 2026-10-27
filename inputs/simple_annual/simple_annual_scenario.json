@@ -1,0 +1,10 @@
+{
+  "solver": "highs",
+  "run": {
+    "mode": "expand",
+    "zones": ["DK", "DE"]
+  },
+  "network": {
+    "stop_price": 3000.0
+  }
+}

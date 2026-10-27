@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dna-pypsa"
+dynamic = ["version"]
+description = "PyPSA capacity expansion and dispatch runner for the Danish Nuclear Alliance"
+authors = [
+    { name = "Quantified Carbon" }
+]
+maintainers = [
+    { name = "Daniel Cox", email = "dmcox@quantifiedcarbon.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pypsa>=1.1.2",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "highspy>=1.13.1",
+    "gurobipy>=13.0.1",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "dna_pypsa.version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dna_pypsa*"]
+
+[project.scripts]
+dna-pypsa = "dna_pypsa.cli:main"
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow-running integration tests",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    "black",
+    "pre-commit",
+]

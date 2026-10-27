@@ -1,0 +1,6 @@
+name,bus,carrier,p_nom,p_nom_extendable,p_nom_max,capital_cost,marginal_cost,p_max_pu
+nuclear_DK,DK,nuclear,0.0,True,6000.0,7000000.0,8.0,0.85
+wind_offshore_DK,DK,wind-offshore,0.0,True,10000.0,1800000.0,0.0,1.0
+gas_DK,DK,gas,2000.0,False,,0.0,80.0,1.0
+coal_DE,DE,coal,25000.0,False,,0.0,100.0,1.0
+gas_DE,DE,gas,25000.0,False,,0.0,75.0,1.0

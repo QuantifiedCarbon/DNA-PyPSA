@@ -1,0 +1,55 @@
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Environment variables
+.env
+.env.*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checkers
+.mypy_cache/
+.pytype/
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+**/gurobi_log.txt
+**/gurobi_investment_log.txt
+
+# Solver outputs — large, long-running, should not be version controlled
+outputs/
+
+# Test run inputs
+inputs/*test*
+inputs/**/*test*

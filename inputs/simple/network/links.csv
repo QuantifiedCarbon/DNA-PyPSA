@@ -1,0 +1,2 @@
+name,bus0,bus1,carrier,p_nom,efficiency
+interconnect_DK_DE,DK,DE,AC,1500.0,0.98

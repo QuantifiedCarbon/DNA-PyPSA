@@ -1,0 +1,11 @@
+{
+  "solver": "gurobi",
+  "run": {
+    "mode": "expand",
+    "pre_solve": "island"
+  },
+  "network": {
+    "stop_price": 3000.0,
+    "external_stop_price": 600.0
+  }
+}
